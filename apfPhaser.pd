@@ -1,0 +1,41 @@
+#N canvas 749 50 589 496 10;
+#X obj 103 102 cnv 15 135 175 empty empty apfPhaser_\$1 0 4 0 10 -204786
+-1 0;
+#X obj 346 114 loadbang;
+#X obj 346 133 f \$0;
+#X obj 113 160 hradio 15 1 1 3 \$1-n_stages \$0-n_stages n_stages -4
+-22 0 10 -262144 -1 -1 2;
+#X text 112 144 4 8 12;
+#X floatatom 175 182 5 0 100 0 wet_dry #0-wetdry #1-wetdry;
+#X floatatom 176 197 5 -2 2 0 LFO_speed #0-LFOspeed #1-LFOspeed;
+#X floatatom 176 213 5 0.125 0.375 0 LFO_depth #0-LFOdepth #1-LFOdepth
+;
+#X floatatom 176 228 5 0 0.97 0 feedback #0-fbgain #1-fbgain;
+#X floatatom 175 243 5 80 2000 0 fb_delay #0-fbdelay #1-fbdelay;
+#X obj 175 130 vradio 15 1 0 3 \$1-waveform \$0-waveform waveform -20
+-8 0 10 -262144 -1 -1 1;
+#X text 192 127 saw;
+#X text 191 143 sine;
+#X floatatom 176 259 5 0 1 0 manual #0-manualAmt #1-manualAmt;
+#X text 191 158 manual;
+#X text 431 392 6-4-2018 jzr;
+#X msg 345 152 \; \$1-n_stages 2 \; \$1-wetdry 50 \; \$1-LFOspeed 0.09
+\; \$1-LFOdepth 0.125 \; \$1-fbgain 0 \; \$1-fbdelay 320 \; \$1-waveform
+1 \; \$1-manualAmt 0.5 \;;
+#N canvas 0 50 597 388 copyrightInfo2020 0;
+#X text 74 306 j.raski@gmail.com;
+#X text 43 19 This program creates generative music on an electronic
+synthesiser. Copyright (C) 2020 Jerry Z. Raski This program is free
+software: you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software
+Foundation \, either version 3 of the License \, or (at your option)
+any later version. This program is distributed in the hope that it
+will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details. You should have received
+a copy of the GNU General Public License along with this program. If
+not \, see <https://www.gnu.org/licenses/>.;
+#X restore 383 374 pd copyrightInfo2020;
+#X connect 1 0 2 0;
+#X connect 2 0 16 0;
+#X coords 0 -1 1 1 140 180 1 100 100;

@@ -1,0 +1,47 @@
+#N canvas 449 50 644 459 10;
+#X obj 103 103 cnv 15 225 135 empty empty groupLFO_\$1 0 6 0 10 -261234
+-66577 0;
+#X obj 411 95 loadbang;
+#X obj 411 113 f \$0;
+#X obj 107 129 vradio 12 1 0 5 \$1-sLFO1 \$0-sLFO1 LFO_1 0 -8 0 10
+-262144 -1 -1 4;
+#X text 120 128 triangle;
+#X text 120 140 saw descend;
+#X text 119 152 ramp ascend;
+#X text 121 163 sq wave;
+#X floatatom 212 193 5 0 0 1 rate_2 #0-rLFO2 #1-rLFO2;
+#X floatatom 213 208 5 0 1000 1 depth_2 #0-amtLFO2 #1-amtLFO2;
+#X obj 211 130 vradio 12 1 0 5 \$1-sLFO2 \$0-sLFO2 LFO_2 0 -8 0 10
+-262144 -1 -1 4;
+#X text 224 128 triangle;
+#X text 224 140 saw descend;
+#X text 224 153 ramp ascend;
+#X text 225 165 sq wave;
+#X floatatom 108 192 5 0 0 1 rate_1 #0-rLFO1 #1-rLFO1;
+#X floatatom 108 207 5 0 1000 1 depth_1 #0-amtLFO1 #1-amtLFO1;
+#X obj 151 224 hsl 128 12 0 100 0 0 \$1-balLFO \$0-balLFO empty -2
+-8 0 10 -262144 -1 -1 3175 1;
+#X text 105 222 LFO 1;
+#X text 284 222 LFO 2;
+#X text 121 175 sine;
+#X text 225 178 sine;
+#X msg 411 131 \; \$1-rLFO1 0.1 \; \$1-sLFO1 4 \; \$1-amtLFO1 50 \;
+\$1-rLFO2 0.13 \; \$1-sLFO2 4 \; \$1-amtLFO2 50 \; \$1-balLFO 25 \;
+;
+#N canvas 0 50 597 388 copyrightInfo2020 0;
+#X text 74 306 j.raski@gmail.com;
+#X text 43 19 This program creates generative music on an electronic
+synthesiser. Copyright (C) 2020 Jerry Z. Raski This program is free
+software: you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software
+Foundation \, either version 3 of the License \, or (at your option)
+any later version. This program is distributed in the hope that it
+will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details. You should have received
+a copy of the GNU General Public License along with this program. If
+not \, see <https://www.gnu.org/licenses/>.;
+#X restore 390 269 pd copyrightInfo2020;
+#X connect 1 0 2 0;
+#X connect 2 0 22 0;
+#X coords 0 -1 1 1 230 140 1 100 100;

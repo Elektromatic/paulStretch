@@ -1,0 +1,96 @@
+#N canvas 166 60 1178 784 12;
+#X obj 191 160 output~;
+#X obj 190 81 paulStretch~ xx;
+#X obj 191 120 apfPhaser~ mM;
+#X obj 250 484 apfPhaser mM;
+#X obj 306 359 paulStretch xx;
+#X obj 191 139 autopan ap;
+#X obj 395 484 groupLFO ap;
+#X obj 136 669 loadbang;
+#X msg 136 688 \; initg 88 \;;
+#X obj 190 100 bobFilter~ ice;
+#X obj 395 628 bobFilter ice;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array waves 341419 float 2;
+#X coords 0 1 341419 -1 400 140 1 0 0;
+#X restore 639 103 graph;
+#X obj 440 76 bng 15 250 50 0 empty empty open_new_file 17 7 0 10 -204786
+-1 -13381;
+#X obj 440 96 openpanel;
+#X obj 440 141 soundfiler;
+#X floatatom 440 220 7 0 0 1 total_ms - -;
+#X obj 440 199 / 44.1;
+#X floatatom 457 163 8 0 0 1 file_size - -;
+#X floatatom 399 285 7 0 0 1 frequency - -;
+#X obj 399 265 expr 44100 / $f1;
+#X obj 403 36 loadbang;
+#X msg 440 118 read -resize \$1 waves;
+#X obj 738 392 line~;
+#X obj 773 302 t b b;
+#X msg 805 366 0;
+#X obj 773 282 bng 15 250 50 0 empty empty bang_to_listen_to_audio_file
+17 7 0 10 -204786 -1 -13381;
+#X obj 738 366 pack 0 0;
+#X obj 738 343 f;
+#X obj 821 325 / 44.1;
+#X obj 738 415 tabread4~ waves;
+#X obj 737 439 output~;
+#X msg 403 55 read -resize Y56.wav waves;
+#X obj 457 181 s xx-sampSize;
+#X obj 440 237 s xx-sampTime;
+#X obj 399 303 s xx-sampFreq;
+#X obj 821 302 r xx-sampSize;
+#N canvas 0 50 597 388 copyrightInfo2020 0;
+#X text 74 306 j.raski@gmail.com;
+#X text 43 19 This program creates generative music on an electronic
+synthesiser. Copyright (C) 2020 Jerry Z. Raski This program is free
+software: you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software
+Foundation \, either version 3 of the License \, or (at your option)
+any later version. This program is distributed in the hope that it
+will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details. You should have received
+a copy of the GNU General Public License along with this program. If
+not \, see <https://www.gnu.org/licenses/>.;
+#X restore 138 727 pd copyrightInfo2020;
+#X msg 64 280 start;
+#X msg 69 298 stop;
+#X obj 40 330 writesf~ 2;
+#X msg 58 262 open -wave -little -bytes 2 paulstretch.wav;
+#X connect 1 0 9 0;
+#X connect 2 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 0 39 0;
+#X connect 5 1 0 1;
+#X connect 5 1 39 1;
+#X connect 7 0 8 0;
+#X connect 9 0 2 0;
+#X connect 12 0 13 0;
+#X connect 13 0 21 0;
+#X connect 14 0 16 0;
+#X connect 14 0 17 0;
+#X connect 14 0 19 0;
+#X connect 15 0 33 0;
+#X connect 16 0 15 0;
+#X connect 17 0 32 0;
+#X connect 18 0 34 0;
+#X connect 19 0 18 0;
+#X connect 20 0 31 0;
+#X connect 21 0 14 0;
+#X connect 22 0 29 0;
+#X connect 23 0 27 0;
+#X connect 23 1 24 0;
+#X connect 24 0 22 0;
+#X connect 25 0 23 0;
+#X connect 26 0 22 0;
+#X connect 27 0 26 0;
+#X connect 28 0 26 1;
+#X connect 29 0 30 0;
+#X connect 29 0 30 1;
+#X connect 31 0 14 0;
+#X connect 35 0 27 1;
+#X connect 35 0 28 0;
+#X connect 37 0 39 0;
+#X connect 38 0 39 0;
+#X connect 40 0 39 0;

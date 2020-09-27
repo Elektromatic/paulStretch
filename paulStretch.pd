@@ -1,0 +1,95 @@
+#N canvas 539 50 523 469 10;
+#X obj 103 102 cnv 15 175 115 empty empty paulStretch_\$1 0 4 0 10
+-203904 -1 0;
+#N canvas 705 50 278 281 windowSize 0;
+#X obj 93 56 inlet;
+#X obj 133 82 + 10;
+#X obj 93 128 pow;
+#X obj 93 83 t b;
+#X msg 93 103 2;
+#X obj 133 101 t b f;
+#X floatatom 102 147 5 0 0 0 - - -;
+#X obj 93 166 outlet;
+#X connect 0 0 3 0;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 7 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 5 1 2 1;
+#X restore 112 292 pd windowSize;
+#X obj 107 132 vradio 13 1 0 6 \$1-window \$0-window window_size 0
+-8 0 10 -204786 -1 -13381 5;
+#X text 122 131 1024;
+#X text 121 144 2048;
+#X text 121 158 4096;
+#X text 122 171 8192;
+#X text 121 185 16384;
+#X text 121 198 32768;
+#N canvas 980 50 278 281 pStretch 0;
+#X obj 75 223 outlet;
+#X obj 15 133 / 4;
+#X obj 75 162 /;
+#X floatatom 98 192 5 0 0 0 - - -;
+#X obj 97 14 inlet;
+#X obj 97 111 pow;
+#X obj 97 66 t b;
+#X msg 97 86 2;
+#X obj 137 84 t b f;
+#X floatatom 144 132 5 0 0 0 - - -;
+#X obj 97 131 t b f;
+#X obj 144 224 outlet;
+#X obj 97 36 i 0;
+#X obj 15 113 r \$1-wSize;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 2 0 3 0;
+#X connect 4 0 12 0;
+#X connect 5 0 9 0;
+#X connect 5 0 10 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 8 1 5 1;
+#X connect 9 0 11 0;
+#X connect 10 0 2 0;
+#X connect 10 1 2 1;
+#X connect 12 0 8 0;
+#X connect 12 0 6 0;
+#X connect 13 0 1 0;
+#X restore 204 291 pd pStretch;
+#X obj 167 151 hsl 100 12 0 6 0 0 \$1-off \$0-off Stretch -2 -8 0 10
+-204786 -1 -1 6600 1;
+#X floatatom 167 168 5 0 0 3 X_times_longer #0-x #1-x;
+#X obj 343 66 loadbang;
+#X obj 343 85 f \$0;
+#X obj 112 273 r \$1-window;
+#X obj 112 312 s \$1-wSize;
+#X obj 204 310 s \$1-offset;
+#X obj 203 272 r \$1-off;
+#X obj 297 311 s \$0-x;
+#X msg 343 104 \; \$1-window 5 \; \$1-off 4 \;;
+#N canvas 0 50 597 388 copyrightInfo2020 0;
+#X text 74 306 j.raski@gmail.com;
+#X text 43 19 This program creates generative music on an electronic
+synthesiser. Copyright (C) 2020 Jerry Z. Raski This program is free
+software: you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software
+Foundation \, either version 3 of the License \, or (at your option)
+any later version. This program is distributed in the hope that it
+will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details. You should have received
+a copy of the GNU General Public License along with this program. If
+not \, see <https://www.gnu.org/licenses/>.;
+#X restore 41 399 pd copyrightInfo2020;
+#X connect 1 0 15 0;
+#X connect 9 0 16 0;
+#X connect 9 1 18 0;
+#X connect 12 0 13 0;
+#X connect 13 0 19 0;
+#X connect 14 0 1 0;
+#X connect 17 0 9 0;
+#X coords 0 -1 1 1 180 120 1 100 100;

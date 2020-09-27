@@ -1,0 +1,56 @@
+#N canvas 409 92 583 556 12;
+#X obj 273 108 inlet~;
+#X obj 274 380 outlet~;
+#X floatatom 285 270 5 0 0 0 - - -;
+#X msg 149 219 saturation \$1;
+#X obj 149 201 / 100;
+#X msg 125 299 oversample \$1;
+#X obj 274 331 bob~;
+#X obj 384 317 line~;
+#X obj 285 289 pack 0 50;
+#X obj 285 307 line~;
+#X obj 385 299 / 25;
+#X msg 175 130 clear;
+#X text 270 91 signal;
+#X text 341 91 frequency;
+#X obj 421 109 inlet;
+#X obj 385 279 r \$1-bobQ;
+#X obj 285 231 r \$1-freqScale;
+#X obj 285 250 * 100;
+#X obj 350 108 inlet~;
+#X text 426 90 Q, f 2;
+#X obj 175 111 r \$1-clear;
+#X obj 149 182 r \$1-sat;
+#X obj 125 281 r \$1-oversamp;
+#N canvas 0 50 597 388 copyrightInfo2020 0;
+#X text 74 306 j.raski@gmail.com;
+#X text 43 19 This program creates generative music on an electronic
+synthesiser. Copyright (C) 2020 Jerry Z. Raski This program is free
+software: you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software
+Foundation \, either version 3 of the License \, or (at your option)
+any later version. This program is distributed in the hope that it
+will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details. You should have received
+a copy of the GNU General Public License along with this program. If
+not \, see <https://www.gnu.org/licenses/>.;
+#X restore 48 465 pd copyrightInfo2020;
+#X connect 0 0 6 0;
+#X connect 2 0 8 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 7 0 6 2;
+#X connect 8 0 9 0;
+#X connect 9 0 6 1;
+#X connect 10 0 7 0;
+#X connect 11 0 6 0;
+#X connect 14 0 10 0;
+#X connect 15 0 10 0;
+#X connect 16 0 17 0;
+#X connect 17 0 2 0;
+#X connect 20 0 11 0;
+#X connect 21 0 4 0;
+#X connect 22 0 5 0;

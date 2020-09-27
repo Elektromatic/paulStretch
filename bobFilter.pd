@@ -1,0 +1,32 @@
+#N canvas 658 50 450 312 10;
+#X obj 103 102 cnv 15 145 105 empty empty bobFilter_\$1 0 6 0 10 -200704
+-66577 0;
+#X obj 310 108 loadbang;
+#X obj 310 126 f \$0;
+#X floatatom 106 118 5 1 80 1 cutoff_freq #0-freqScale #1-freqScale
+;
+#X floatatom 107 135 5 0 200 1 filter_Q #0-bobQ #1-bobQ;
+#X obj 109 186 bng 15 250 50 0 \$1-clear \$0-clear clear_filter 17
+7 0 10 -262144 -1 -1;
+#X floatatom 107 152 5 0 999 1 saturation #0-sat #1-sat;
+#X floatatom 107 169 5 1 10 1 oversampling #0-oversamp #1-oversamp
+;
+#X msg 310 144 \; \$1-bobQ 33 \; \$1-oversamp 4 \; \$1-sat 300 \; \$1-freqScale
+80 \;;
+#N canvas 0 50 597 388 copyrightInfo2020 0;
+#X text 74 306 j.raski@gmail.com;
+#X text 43 19 This program creates generative music on an electronic
+synthesiser. Copyright (C) 2020 Jerry Z. Raski This program is free
+software: you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software
+Foundation \, either version 3 of the License \, or (at your option)
+any later version. This program is distributed in the hope that it
+will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details. You should have received
+a copy of the GNU General Public License along with this program. If
+not \, see <https://www.gnu.org/licenses/>.;
+#X restore 280 228 pd copyrightInfo2020;
+#X connect 1 0 2 0;
+#X connect 2 0 8 0;
+#X coords 0 -1 1 1 150 110 1 100 100;
